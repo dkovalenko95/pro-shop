@@ -1,6 +1,8 @@
 function App() {
   return (
-    <h1>Pro Shop Demo</h1>
+    <>
+      <h1 className='text-3xl font-bold underline'>Pro Shop Demo W</h1>
+    </>
   );
 };
 
