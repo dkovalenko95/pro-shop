@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { ReactNode } from 'react';
 import { Product as ProductType } from '../../products-and-images/products';
+import Rating from './Rating';
 
-type PropsType = {
+type ProductProps = {
   children?: ReactNode;
   product: ProductType;
 };
 
-function Product({ product } : PropsType) {
+function Product({ product } : ProductProps) {
   return (
     <div className='card card-compact bg-base-100 shadow-xl'>
       <figure>
@@ -20,6 +21,7 @@ function Product({ product } : PropsType) {
           <h2 className='card-title'>{product.name}</h2>
         </a>
         <h2 className='card-title'>{product.price}</h2>
+        <Rating value={product.rating} text={`${product.numReviews} reviews`} />
         <p>{product.description}</p>
         <div className='card-actions justify-end'>
           <Link to={`/product/${product._id}`}>
