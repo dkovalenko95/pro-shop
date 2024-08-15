@@ -9,3 +9,11 @@
     @apply font-raleway;
   }
 }
+
+@layer components {
+  .rating svg {
+    color: #f8e825;
+    height: 20px;
+    width: 20px;
+  }
+}
