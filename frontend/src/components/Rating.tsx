@@ -1,14 +1,11 @@
+import { ReactNode } from 'react';
 import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
 
-
 type RatingProps = {
+  children?: ReactNode;
   value: number;
   text: string;
   color?: string;
-};
-
-Rating.defaultProps = {
-  color: '#f8e825',
 };
 
 function Rating({ value, text } : RatingProps) {

@@ -8,9 +8,9 @@ type ProductProps = {
   product: ProductType;
 };
 
-function Product({ product } : ProductProps) {
+function ProductCard({ product } : ProductProps) {
   return (
-    <div className='card card-compact bg-base-100 shadow-xl'>
+    <div className='card card-compact bg-base-100 shadow-xl place-self-center max-w-[320px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-[500px] h-full'>
       <figure>
         <Link to={`/product/${product._id}`}>
           <img src={product.image} alt='Product' />
@@ -33,4 +33,4 @@ function Product({ product } : ProductProps) {
   );
 };
 
-export default Product;
+export default ProductCard;

@@ -2,7 +2,7 @@ function Footer() {
   const year: number = new Date().getFullYear();
 
   return (
-    <footer className='w-full h-14 bg-slate-500 text-white flex items-center justify-center'>
+    <footer className='w-full h-12 bg-slate-600 text-white flex items-center justify-center'>
       <p>ProShop &copy; {year}</p>
     </footer>
   );
