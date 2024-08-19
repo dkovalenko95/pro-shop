@@ -1,10 +1,30 @@
+import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { products } from '../../products-and-images/products';
+import axios from 'axios';
 import Rating from '../components/Rating';
+import { Product } from '../../products-and-images/products';
 
 function SingleProduct() {
+  const [product, setProduct] = useState<Product | null>(null);
+  
   const { id: productId } = useParams();
-  const product = products.find((prod) => prod._id === productId);
+
+  useEffect(() => {
+    const fetchProduct = async (): Promise<void> => {
+      try {
+        const { data } = await axios.get(`/api/products/${productId}`);
+        setProduct(data);
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          console.error('Axios fetching products error:', error);
+        } else {
+          console.error('Error fetching products:', error);
+        };
+      };
+    };
+
+    fetchProduct();
+  }, [productId]);
 
   return (
     <div className='max-w-[1440px] my-0 mx-auto'>
