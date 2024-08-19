@@ -1,19 +1,19 @@
-// export type Product = {
-//   _id: string;
-//   name: string;
-//   image: string;
-//   description: string;
-//   brand: string;
-//   category: string;
-//   price: number;
-//   countInStock: number;
-//   rating: number;
-//   numReviews: number;
-// };
+export type Product = {
+  _id: string;
+  name: string;
+  image: string;
+  description: string;
+  brand: string;
+  category: string;
+  price: number;
+  countInStock: number;
+  rating: number;
+  numReviews: number;
+};
 
-// export type ProductsSet = Product[];
+export type ProductsSet = Product[];
 
-export const products/* : ProductsSet */ = [
+export const products: ProductsSet = [
   {
     _id: '1',
     name: 'Airpods Wireless Bluetooth Headphones',
